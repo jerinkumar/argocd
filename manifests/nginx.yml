@@ -25,6 +25,7 @@ metadata:
   name: nginx
   namespace: default
 spec:
+  type: LoadBalancer
   selector:
     app: nginx
   ports:
