@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: nginx_new
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: nginx_new
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx_new
     spec:
       containers:
-      - name: nginx
+      - name: nginx_new
         image: nginx:alpine
         ports:
         - containerPort: 80
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  name: nginx_new
   namespace: default
 spec:
   selector:
-    app: nginx
+    app: nginx_new
   ports:
   - port: 80
     targetPort: 80
